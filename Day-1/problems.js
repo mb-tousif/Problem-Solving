@@ -32,3 +32,19 @@ function isAnagram(str1, str2) {
     return str1 === str2;
 }
 
+console.log(isAnagram('cinema', 'iceman'));
+
+// Write a function to determine if one String is a case-insensitive palindrome of another String.
+// palindrome: a word, phrase, or sequence that reads the same backward as forward, e.g., madam or nurses run. 
+
+function isPalindrome(str) {
+    // convert the string to lowercase
+    str = str.toLowerCase();
+    // reverse the string
+    let reversed = str.split('').reverse().join('');
+    // compare the string with its reversed version
+    return str === reversed;
+}
+console.log(isPalindrome('nurses run'));
+console.log( isPalindrome('madam'));
+
