@@ -48,3 +48,17 @@ function isPalindrome(str) {
 console.log(isPalindrome('nurses run'));
 console.log( isPalindrome('madam'));
 
+// Write a function that will find all the vowels [a,e,i,o,u] inside any string and then flip the order of only the vowels. If there is an odd number of vowels then the one in the middle stays in the same position. 
+function flipVowels(str) {
+    // convert the string to lowercase
+    str = str.toLowerCase();
+    // find all the vowels in the string
+    let vowels = str.match(/[aeiou]/g);
+    // reverse the vowels
+    vowels = vowels.reverse();
+    // replace the vowels in the string with the reversed vowels
+    let i = 0;
+    return str.replace(/[aeiou]/g, () => vowels[i++]);
+}
+
+console.log(flipVowels('Hello World'));
