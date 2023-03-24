@@ -29,3 +29,60 @@ const removeZero = (arr) => {
     return newArr.concat(zeroArr);
 }
 console.log(removeZero(arr));
+
+//  Write a function Reverse a String without Affecting Special Characters in JavaScript? 
+// Answer:
+
+const reverseString = (str) => {
+    let arr = str.split('');
+    let left = 0;
+    let right = arr.length - 1;
+    while (left < right) {
+        if (!arr[left].match(/[a-z]/i)) {
+            left++;
+        } else if (!arr[right].match(/[a-z]/i)) {
+            right--;
+        } else {
+            let temp = arr[left];
+            arr[left] = arr[right];
+            arr[right] = temp;
+            left++;
+            right--;
+        }
+    }
+    return arr.join('');
+}
+console.log(reverseString('a,b$c'));
+
+// Write a function to find the longest word in a string in JavaScript?
+// Answer:
+
+const longestWord = (str) => {
+    let arr = str.split(' ');
+    let longest = '';
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].length > longest.length) {
+            longest = arr[i];
+        }
+    }
+    return longest;
+}
+
+console.log(longestWord('Web Development Tutorial'));
+
+
+// Write a function to find the smallest word in a string in JavaScript?
+// Answer:
+
+const smallestWord = (str) => {
+    let arr = str.split(' ');
+    let smallest = arr[0];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].length < smallest.length) {
+            smallest = arr[i];
+        }
+    }
+    return smallest;
+}
+
+console.log(smallestWord('Web Development Tutorial'));
