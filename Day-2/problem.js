@@ -62,3 +62,27 @@ const smallestWord = (str) => {
 }
 
 console.log(smallestWord('Web Development Tutorial'));
+
+//  Write a function Reverse a String without Affecting Special Characters in JavaScript? 
+// Answer:
+
+const reverseString = (str) => {
+    let arr = str.split('');
+    let left = 0;
+    let right = arr.length - 1;
+    while (left < right) {
+        if (!arr[left].match(/[a-z]/i)) {
+            left++;
+        } else if (!arr[right].match(/[a-z]/i)) {
+            right--;
+        } else {
+            let temp = arr[left];
+            arr[left] = arr[right];
+            arr[right] = temp;
+            left++;
+            right--;
+        }
+    }
+    return arr.join('');
+}
+console.log(reverseString('a,b$c'));
