@@ -14,3 +14,16 @@ const runningSum = (arr) => {
 }
 
 console.log(runningSum(arr));
+
+// Answer: Method-2
+
+const runningSumV2 = (arr) => {
+    let sum = 0;
+    return arr.reduce((result, num) => {
+      sum += num;
+      result.push(sum);
+      return result;
+    }, []);
+  };
+
+console.log(runningSumV2(arr));
