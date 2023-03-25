@@ -27,3 +27,12 @@ const runningSumV2 = (arr) => {
   };
 
 console.log(runningSumV2(arr));
+
+// Answer: Method-3
+
+const runningSumV3 = arr => {
+    let sum = 0;
+    return arr.map(num => sum += num);
+};
+
+console.log(runningSumV3(arr));
