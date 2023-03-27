@@ -14,3 +14,19 @@ const isSubsequence = (s, t) => {
 }
 console.log(isSubsequence("abc", "ahbgdc"));
 console.log(isSubsequence("axc", "ahbgdc"));
+
+// Answer: Method-2
+const isSubsequence = (s, t) => {
+    let i = 0;
+    for (const char of t) {
+      if (char === s[i]) {
+        i++;
+      }
+      if (i === s.length) {
+        return true;
+      }
+    }
+    return false;
+}
+console.log(isSubsequence("abc", "ahbgdc"));
+console.log(isSubsequence("axc", "ahbgdc"));
