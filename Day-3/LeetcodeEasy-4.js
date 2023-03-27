@@ -16,7 +16,7 @@ console.log(isSubsequence("abc", "ahbgdc"));
 console.log(isSubsequence("axc", "ahbgdc"));
 
 // Answer: Method-2
-const isSubsequence = (s, t) => {
+const isSubsequenceV2 = (s, t) => {
     let i = 0;
     for (const char of t) {
       if (char === s[i]) {
@@ -28,5 +28,5 @@ const isSubsequence = (s, t) => {
     }
     return false;
 }
-console.log(isSubsequence("abc", "ahbgdc"));
-console.log(isSubsequence("axc", "ahbgdc"));
+console.log(isSubsequenceV2("abc", "ahbgdc"));
+console.log(isSubsequenceV2("axc", "ahbgdc"));
