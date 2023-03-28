@@ -53,3 +53,12 @@ const lengthOfLongestSubstring = (s) => {
     }
     return max;
 }
+
+// Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.
+// Answer: Method-1
+const findMedianSortedArrays = (nums1, nums2) => {
+    let nums = [...nums1, ...nums2].sort((a, b) => a - b);
+    let mid = Math.floor(nums.length / 2);
+    return nums.length % 2 !== 0 ? nums[mid] : (nums[mid] + nums[mid - 1]) / 2;
+}
+console.log(findMedianSortedArrays([1, 3], [2]));
