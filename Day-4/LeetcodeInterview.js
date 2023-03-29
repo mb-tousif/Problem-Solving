@@ -89,3 +89,33 @@ const reverseStrV2 = (s, k) => {
     return arr.join("");
 }
 console.log(reverseStrV2("abcdefg", 2));
+
+// There are n servers numbered from 0 to n - 1 connected by undirected server-to-server connections forming a network where connections[i] = [ai, bi] represents a connection between servers ai and bi. Any server can reach other servers directly or indirectly through the network. A critical connection is a connection that, if removed, will make some server unable to reach some other server. Return all critical connections in the network in any order. 
+
+// Answer: Method-1
+const criticalConnections = (n, connections) => {
+    let graph = new Map();
+    for (let [a, b] of connections) {
+        if (!graph.has(a)) graph.set(a, []);
+        if (!graph.has(b)) graph.set(b, []);
+        graph.get(a).push(b);
+        graph.get(b).push(a);
+    }
+    let ids = new Array(n).fill(-1);
+    let low = new Array(n).fill(-1);
+    let res = [];
+    let id = 0;
+    const dfs = (node, parent) => {
+        if (ids[node] !== -1) return;
+        ids[node] = low[node] = id++;
+        for (let neighbor of graph.get(node)) {
+            if (neighbor === parent) continue;
+            dfs(neighbor, node);
+            low[node] = Math.min(low[node], low[neighbor]);
+            if (ids[node] < low[neighbor]) res.push([node, neighbor]);
+        }
+    }
+    dfs(0, -1);
+    return res;
+}
+console.log(criticalConnections(4, [[0, 1], [1, 2], [2, 0], [1, 3]]));
