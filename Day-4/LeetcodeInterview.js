@@ -79,3 +79,13 @@ const reverseStr = (s, k) => {
     return arr.join("");
 }
 console.log(reverseStr("abcdefg", 2));
+
+//  Answer: Method-2
+const reverseStrV2 = (s, k) => {
+    let arr = s.split("");
+    for (let i = 0; i < arr.length; i += 2 * k) {
+        arr.splice(i, k, ...arr.slice(i, i + k).reverse());
+    }
+    return arr.join("");
+}
+console.log(reverseStrV2("abcdefg", 2));
