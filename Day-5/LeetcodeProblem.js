@@ -13,4 +13,10 @@ const middleNode = (head) => {
 };
 console.log(middleNode(head));
 
+// Answer: Method-2
 
+const middleNodeV2 = (head) => {
+    let mid = Math.floor(head.length / 2);
+    return head[mid];
+};
+console.log(middleNodeV2(head));
