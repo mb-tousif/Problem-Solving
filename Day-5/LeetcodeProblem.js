@@ -48,3 +48,22 @@ const reverse = (x) => {
     return (rev < Math.pow(-2, 31) || rev > Math.pow(2, 31) - 1) ? 0 : rev;
 };
 console.log(reverse(123));
+
+// Implement the myAtoi function, which converts a string to a 32-bit signed integer. 
+// Answer: Method-1
+const myAtoi = (str) => {
+    let num = parseInt(str);
+    if (isNaN(num)) {
+        return 0;
+    }
+    if (num < Math.pow(-2, 31)) {
+        return Math.pow(-2, 31);
+    }
+    if (num > Math.pow(2, 31) - 1) {
+        return Math.pow(2, 31) - 1;
+    }
+    return num;
+};
+console.log(myAtoi("42"));
+
+
