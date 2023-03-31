@@ -66,4 +66,13 @@ const myAtoi = (str) => {
 };
 console.log(myAtoi("42"));
 
+// Answer: Method-2
+const myAtoiV2 = (str) => {
+    let num = parseInt(str);
+    if (isNaN(num)) {
+        return 0;
+    }
+    return Math.max(Math.pow(-2, 31), Math.min(num, Math.pow(2, 31) - 1));
+};
+console.log(myAtoiV2("42"));
 
