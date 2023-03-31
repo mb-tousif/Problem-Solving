@@ -76,3 +76,12 @@ const myAtoiV2 = (str) => {
 };
 console.log(myAtoiV2("42"));
 
+// Given an input string s and a pattern p, implement regular expression matching with support for '.' and '*' where: '.' Matches any single character. '*' Matches zero or more of the preceding element. The matching should cover the entire input string (not partial).
+
+// Answer: Method-1
+const isMatch = (s, p) => {
+    let reg = new RegExp(p);
+    return reg.test(s);
+};
+console.log(isMatch("aa", "a*"));
+
