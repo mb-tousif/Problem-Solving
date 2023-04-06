@@ -21,3 +21,15 @@ const randomTextColor = () => {
 };
 // document.body.style.color = randomTextColor();
 console.log(randomTextColor());
+
+// Write a function that generate random color. Apply this function to button background. 
+// Answer:
+const randomButtonColor = () => {
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+        color += Math.floor(Math.random() * 16).toString(16);
+    } 
+    return color;
+};
+// document.body.style.backgroundColor = randomButtonColor();
+console.log(randomButtonColor());
